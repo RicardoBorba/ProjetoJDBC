@@ -85,4 +85,24 @@ public class RepositorioCliente implements IRepositorioCliente{
 		
 	}
 	
+	public void excluirCliente(int cliente_id) throws Exception{
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		conn = Conexao.getConexao();
+		conn.setAutoCommit(false);
+		String SQL = "DELETE FROM CLIENTE WHERE CLIENTE_ID=?";
+		
+		try{
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setInt(1, cliente_id);
+			
+			pstmt.executeUpdate();
+			conn.commit();
+			pstmt.close();
+			conn.close();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
 }

@@ -69,7 +69,14 @@ public class AplicacaoGUI {
 					JOptionPane.showMessageDialog(null, e.getMessage());
 				}
 				break;
-			
+			case 4://excluir cliente
+				String strID3 = JOptionPane.showInputDialog("Informe o id do cliente: ");
+				try{
+					fachada.excluirCliente(Integer.parseInt(strID3));
+				} catch(Exception e){
+					JOptionPane.showMessageDialog(null, e.getMessage());
+				}
+				break;
 			}
 		}
 	}

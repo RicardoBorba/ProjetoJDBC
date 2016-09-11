@@ -29,4 +29,8 @@ public class Fachada {
 	public void alterarCliente(Cliente cliente) throws Exception{
 		this.repositorioCliente.alterarCliente(cliente);
 	}
+	
+	public void excluirCliente(int cliente_id) throws Exception{
+		this.repositorioCliente.excluirCliente(cliente_id);
+	}
 }
